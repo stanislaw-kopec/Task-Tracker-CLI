@@ -26,6 +26,7 @@ public class Main {
                     break;
                 case "delete":
                     System.out.println("Deleting the task...");
+                    operations.delete(Integer.parseInt(parameter));
                     break;
                 case "print-all":
                     System.out.println("Printing all the tasks...");

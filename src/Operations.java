@@ -10,6 +10,25 @@ public class Operations extends Task {
         tasks.add(task);
     }
 
+    public void delete(int taskId) {
+        if (getPositionById(taskId) != -1) {
+            tasks.remove(getPositionById(taskId));
+        } else {
+            System.out.println("Task did not exist");
+        }
+    }
+
+    public int getPositionById(int taskId) {
+        int i = 0;
+        for (Task task : tasks) {
+            if (task.id == taskId) {
+                return i;
+            }
+            i++;
+        }
+        return -1;
+    }
+
     public void printAll() {
         for (Task task : tasks){
             System.out.println("===============================");
