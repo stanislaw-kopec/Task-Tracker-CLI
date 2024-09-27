@@ -15,7 +15,7 @@ public class Main {
             String[] parts = instruction.split(" ",2);
 //            if (parts[1].length() > 1 && Operations.isInteger(parts[1])) {
 //                parts = instruction.split(" ",3);
-//            }
+//            }//test
             String command = parts[0];
             String parameter = (parts.length > 1) ? parts[1] : "";
 
