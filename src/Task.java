@@ -6,12 +6,13 @@ public class Task {
     public final int id;
     private String description;
     private Status taskStatus;
-    private LocalDateTime createdAt;
+    private final LocalDateTime createdAt;
     private LocalDateTime updatedAt;
 
     public Task() {
         this.id = ++counter;
         this.createdAt = LocalDateTime.now();
+        this.updatedAt = LocalDateTime.now();
         this.taskStatus = Status.TODO;
     }
 
@@ -29,5 +30,17 @@ public class Task {
 
     public Status getTaskStatus() {
         return taskStatus;
+    }
+
+    public void setTaskStatus(Status taskStatus) {
+        this.taskStatus = taskStatus;
+    }
+
+    public LocalDateTime getUpdatedAt() {
+        return updatedAt;
+    }
+
+    public void setUpdatedAt() {
+        this.updatedAt = LocalDateTime.now();
     }
 }

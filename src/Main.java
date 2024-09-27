@@ -7,12 +7,15 @@ public class Main {
         Operations operations = new Operations();
 
         System.out.println("What do you want?");
-        System.out.println("(add/update/delete/print-all/exit)");
+        System.out.println("(add/update/delete/mark-status/print-all/exit)");
 
         do {
             String instruction = scanner.nextLine();
 
             String[] parts = instruction.split(" ",2);
+//            if (parts[1].length() > 1 && Operations.isInteger(parts[1])) {
+//                parts = instruction.split(" ",3);
+//            }
             String command = parts[0];
             String parameter = (parts.length > 1) ? parts[1] : "";
 
@@ -23,6 +26,7 @@ public class Main {
                     break;
                 case "update":
                     System.out.println("Updating the task...");
+                    operations.update(parameter);
                     break;
                 case "delete":
                     System.out.println("Deleting the task...");
@@ -31,6 +35,10 @@ public class Main {
                 case "print-all":
                     System.out.println("Printing all the tasks...");
                     operations.printAll();
+                    break;
+                case "mark-status":
+                    System.out.println("Changing task status..");
+                    operations.markTask(parameter);
                     break;
                 case "exit":
                     System.out.println("See you soon!");
